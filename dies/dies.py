@@ -21,6 +21,6 @@ class Dies(commands.Cog):
             await message.add_reaction(emoji)
             self.pruefung = randint(25,150)
 
-        self.counter = self.counter + 1
+        self.counter += 1
 
         
