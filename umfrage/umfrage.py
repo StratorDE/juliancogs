@@ -142,6 +142,8 @@ class Umfrage(commands.Cog):
                 stopper = len(i["Results"])
                 stopper += 1
                 day = i["Date"]
+                dawum = "https://dawum.de"
+                lizenz = "https://opendatacommons.org/licenses/odbl/1.0"
                 fig, ax = plt.subplots()
                 voter = []
                 parties = []
@@ -154,10 +156,10 @@ class Umfrage(commands.Cog):
 
                 # if-Abfrage wird nur für den Titel im Discord-Embed gebraucht
                 if pruefparl == 0:
-                    embed = discord.Embed(title="Letzte Sonntagsfrage zur BTW", description=f"Datum: {day}\nBefragte: {befragte}\nInstitut: {institutn}")
+                    embed = discord.Embed(title="Letzte Sonntagsfrage zur BTW", description=f"Datum: {day}\nBefragte: {befragte}\nInstitut: {institutn}\nDaten von [Dawum]({dawum}) (Lizenz: [ODC-ODbL]({lizenz}))")
                 else: 
                     land = land.upper()
-                    embed = discord.Embed(title=f"Letzte Sonntagsfrage in {land}", description=f"Datum: {day}\nBefragte: {befragte}\nInstitut: {institutn}")
+                    embed = discord.Embed(title=f"Letzte Sonntagsfrage in {land}", description=f"Datum: {day}\nBefragte: {befragte}\nInstitut: {institutn}\nDaten von [Dawum]({dawum}) (Lizenz: [ODC-ODbL]({lizenz}))")
 
                 #Iteriere über die Survey
                 for value in i["Results"]:
@@ -172,7 +174,7 @@ class Umfrage(commands.Cog):
                         wert = None
                         pass
                     else:
-                        wert = int(ergebnis) 
+                        wert = float(ergebnis) 
                         ergebnis = str(ergebnis)+"%"
                         embed.add_field(name=parteiausgabe, value=ergebnis, inline=False) #embed-Field hinzufügen
                         counter += 1
@@ -189,7 +191,7 @@ class Umfrage(commands.Cog):
                     
                 #Umfrageergebnis für Sonstige. Dunno warum ich das yeet genannt habe.    
                 yeet = i["Results"][str(0)]    
-                wert2 = int(yeet)
+                wert2 = float(yeet)
                 yeet = str(yeet) + "%"
                 
                 #Folgenden drei Zeilen dienen dazu, auch die Sonstigen in den embed sowie die Listen für die Grafik hinzuzufügen
