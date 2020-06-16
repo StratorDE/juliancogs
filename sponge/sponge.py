@@ -12,11 +12,11 @@ class Sponge(commands.Cog):
 
 
     @commands.command()
-    async def sponge(self, ctx, nachricht* = None):
+    async def sponge(self, ctx, *nachricht):
 
         """?sponge <message> (leave blank for last sent message)""" 
         
-        if nachricht is None:
+        if not nachricht::
             msg = "".join(c.lower() if i % 2 == 1 else c for i, c in enumerate(self.msg.upper()))
         else:
             msg = "".join(c.lower() if i % 2 == 1 else c for i, c in enumerate(nachricht.upper()))
