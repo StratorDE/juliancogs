@@ -109,6 +109,8 @@ class Umfrage(commands.Cog):
     @commands.command()
     @commands.cooldown(1,15, commands.BucketType.guild)
     async def umfrage(self,ctx,land = None):
+
+        """Zeigt die letzte Sonntagsfrage für den Bund, EU oder Bundesland der Wahl an"""
         
         #Lade Daten aus JSON
         json_data = requests.request("GET", self.api).json()
