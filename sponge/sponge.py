@@ -19,6 +19,7 @@ class Sponge(commands.Cog):
         if not nachricht:
             msg = "".join(c.lower() if i % 2 == 1 else c for i, c in enumerate(self.msg.upper()))
         else:
+            nachricht = ''.join(nachricht)
             nachricht = str(nachricht)
             msg = "".join(c.lower() if i % 2 == 1 else c for i, c in enumerate(nachricht.upper()))
         await ctx.send(msg)
