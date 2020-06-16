@@ -12,7 +12,7 @@ class Sponge(commands.Cog):
 
 
     @commands.command()
-    async def sponge(self, ctx, nachricht = None):
+    async def sponge(self, ctx, *nachricht = None):
 
         """?sponge <message> (leave blank for last sent message)""" 
         
