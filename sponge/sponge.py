@@ -16,7 +16,7 @@ class Sponge(commands.Cog):
 
         """?sponge <message> (leave blank for last sent message)""" 
         
-        if not nachricht::
+        if not nachricht:
             msg = "".join(c.lower() if i % 2 == 1 else c for i, c in enumerate(self.msg.upper()))
         else:
             msg = "".join(c.lower() if i % 2 == 1 else c for i, c in enumerate(nachricht.upper()))
