@@ -12,8 +12,12 @@ class Sponge(commands.Cog):
 
 
     @commands.command()
-    async def sponge(self, ctx):
-        msg = "".join(c.lower() if i % 2 == 1 else c for i, c in enumerate(self.msg.upper()))
+    async def sponge(self, ctx, nachricht = None):
+        
+        if nachricht is None:
+            msg = "".join(c.lower() if i % 2 == 1 else c for i, c in enumerate(self.msg.upper()))
+        else:
+            msg = "".join(c.lower() if i % 2 == 1 else c for i, c in enumerate(nachricht.upper()))
         await ctx.send(msg)
         
 
