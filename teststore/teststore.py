@@ -6,6 +6,7 @@ from redbot.core.utils.predicates import MessagePredicate
 from redbot.core.bot import Red
 import discord
 import random
+import asyncio
 from dpymenus import Page, PaginatedMenu
 
 
